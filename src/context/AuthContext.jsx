@@ -1,15 +1,13 @@
-import { createContext, useContext, useState } from "react-router-dom";
+import {createContext, useState, useContext} from "react";
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+export const AuthProvider = ({children})=>{
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
 
-
-  // login function to authenticate user and set user state
-  const login = (username, password) => {
-
-    if (username === "admin" && password === "password") {
+  const login = (username, password)=>{
+    // Simulate an API call for authentication
+    if(username === "admin" && password === "123456"){
       const userData = {
         username,
         role: "admin",
@@ -20,22 +18,18 @@ export const AuthProvider = ({ children }) => {
       return true;
     }
     return false;
-  };
-
-
-  // logout function to clear user state and remove user from local storage
+  }
 
   const logout = ()=>{
     localStorage.removeItem("user");
     setUser(null);
-  };
+  }
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
-
 };
 
-export const useAuth = ()=> useContext(AuthContext);
+export const useAuth = ()=>useContext(AuthContext);
