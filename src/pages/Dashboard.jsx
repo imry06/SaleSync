@@ -10,10 +10,19 @@ const Dashboard = () => {
             src="https://intercom.help/scoutmotors/assets/favicon"
             alt="SaleSync Logo" className="dashboard-logo"
           />
-          <h3>SaleSync</h3>
+          <h2>aleSync</h2>
       </div>
      
-      <hr />
+     
+     <div className="dashboard-body">
+
+      <div className="dashboard-buttons">
+        <button>Sale POS</button>
+        <button>Rubic POS</button>
+        <button>Purchase POS</button>
+        <button><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</button>
+      </div>
+     </div>
     </div>
   );
 };
