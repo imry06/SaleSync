@@ -1,8 +1,14 @@
 // import React from 'react'
 import "../css/dashboard.css";
-
+import {useAuth} from "../context/AuthContext";
 
 const Dashboard = () => {
+  const {logout} = useAuth();
+
+  // Function to handle logout
+  const handleLogout = ()=>{
+    logout();
+  }
   return (
     <div className="dashboard">
       <div className="dashboard-header">
@@ -20,7 +26,7 @@ const Dashboard = () => {
         <button>Sale POS</button>
         <button>Rubic POS</button>
         <button>Purchase POS</button>
-        <button><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</button>
+        <button onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</button>
       </div>
      </div>
     </div>
