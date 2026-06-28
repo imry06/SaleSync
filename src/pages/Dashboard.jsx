@@ -1,14 +1,22 @@
 // import React from 'react'
 import "../css/dashboard.css";
 import {useAuth} from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const {logout} = useAuth();
+const navigate = useNavigate();
 
   // Function to handle logout
   const handleLogout = ()=>{
     logout();
   }
+
+  // Function to handle navigation to different POS pages
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="dashboard">
       <div className="dashboard-header">
@@ -23,9 +31,9 @@ const Dashboard = () => {
      <div className="dashboard-body">
 
       <div className="dashboard-buttons">
-        <button>Sale POS</button>
-        <button>Rubic POS</button>
-        <button>Purchase POS</button>
+        <button onClick={() => handleNavigation("/sale-pos")}>Sale POS</button>
+        <button onClick={() => handleNavigation("/rubic-pos")}>Rubic POS</button>
+        <button onClick={() => handleNavigation("/purchase-pos")}>Purchase POS</button>
         <button onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</button>
       </div>
      </div>

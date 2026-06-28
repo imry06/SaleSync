@@ -4,6 +4,9 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import RubicPOS from "./pages/RubicPOS";
+
+
 
 function App() {
   return (
@@ -11,6 +14,7 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
+
           <Route
             path="/"
             element={
@@ -19,6 +23,12 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+        <Route path="/rubic-pos" element={
+          <ProtectedRoute>
+            <RubicPOS />
+          </ProtectedRoute>
+        } />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
