@@ -6,6 +6,8 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import RubicPOS from "./pages/RubicPOS";
 import SalePOS from "./pages/SalePOS";
+import PurchasePOS from "./pages/PurchasePOS";
+
 
 function App() {
   return (
@@ -40,6 +42,16 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/purchase-pos"
+            element={
+              <ProtectedRoute>
+                <PurchasePOS />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
