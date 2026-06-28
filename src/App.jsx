@@ -5,8 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import RubicPOS from "./pages/RubicPOS";
-
-
+import SalePOS from "./pages/SalePOS";
 
 function App() {
   return (
@@ -24,11 +23,23 @@ function App() {
             }
           />
 
-        <Route path="/rubic-pos" element={
-          <ProtectedRoute>
-            <RubicPOS />
-          </ProtectedRoute>
-        } />
+          <Route
+            path="/sale-pos"
+            element={
+              <ProtectedRoute>
+                <SalePOS />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/rubic-pos"
+            element={
+              <ProtectedRoute>
+                <RubicPOS />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
