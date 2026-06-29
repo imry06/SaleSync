@@ -1,0 +1,51 @@
+.rubic-pos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  padding: 15px;
+  background-color: #f5f5f5;
+}
+
+.rubic-pos-left {
+  width: 50%;
+  border-right: 1px solid #ccc;
+}
+
+.rubic-pos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.form-top-fields {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.form-top-fields label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-top-fields input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-top-fields input:focus{
+    outline: none;
+    border-color: #ccc;
+   
+}
